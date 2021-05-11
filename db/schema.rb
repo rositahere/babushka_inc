@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_215741) do
+ActiveRecord::Schema.define(version: 2021_05_11_202046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.date "date"
+    t.time "time"
+    t.string "location"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "granny_id"
+    t.string "status", default: "pending"
+    t.index ["granny_id"], name: "index_appointments_on_granny_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
+
+  create_table "grannies", force: :cascade do |t|
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_grannies_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.float "rating"
+    t.text "description"
+    t.bigint "appointment_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appointment_id"], name: "index_reviews_on_appointment_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +59,9 @@ ActiveRecord::Schema.define(version: 2021_05_07_215741) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "grannies"
+  add_foreign_key "appointments", "users"
+  add_foreign_key "grannies", "users"
+  add_foreign_key "reviews", "appointments"
+  add_foreign_key "reviews", "users"
 end
