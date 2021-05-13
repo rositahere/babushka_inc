@@ -1,1 +1,18 @@
-<!-- Code the granny profile page -->
+<!-- Granny profile page -->
+
+<!-- form displaying info about granny -->
+<h2><%= @granny.user.name %></h2>
+<p><%= @granny.description %></p>
+
+
+
+   <%= simple_form_for [@granny, @appointment] do |f| %>
+      <%= f.input :date, type: "date", html5: true %>
+      <%= f.input :time %>
+      <%= f.input :location %>
+      <%= f.submit %>
+    <% end %>
+
+
+<%= link_to "Back to grannies", grannies_path %>
+
