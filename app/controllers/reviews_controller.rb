@@ -7,9 +7,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.appointment = @appointment
     @review.save
-    redirect_to appointment_path(@appointment)
-    # access params
-    # permit required
+    redirect_to appointment_path(@appointment)#user_path
   end
 
   private

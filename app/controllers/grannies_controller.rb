@@ -9,10 +9,10 @@ class GranniesController < ApplicationController
     @appointment = Appointment.new
   end
 
-  def new
+  def new#rosita
   end
 
-  def create
+  def create#rosita
   end
 
   def update
