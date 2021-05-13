@@ -1,5 +1,5 @@
 class Appointment < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :granny
   has_one :review
 

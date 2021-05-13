@@ -1,0 +1,6 @@
+<h1> Grans and Pop-pops in your area </h1>
+
+<% @grannies.each do |granny| %>
+  <p><%= granny.description %></p>
+  <p><%= granny.user.email %></p>
+<% end %>
