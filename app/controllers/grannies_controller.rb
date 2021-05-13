@@ -10,6 +10,7 @@ class GranniesController < ApplicationController
   end
 
   def new#rosita
+    @granny = Granny.new
   end
 
   def create#rosita
