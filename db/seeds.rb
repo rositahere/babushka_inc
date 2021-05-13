@@ -8,17 +8,26 @@
 require 'faker'
 
 10.times do
-  user = User.create(
+  User.create(
+    name: Faker::Name.name,
     email: Faker::Internet.email,
     password: "123456"
   )
-  user.save!
 end
 
 5.times do
-  granny = Granny.create(
+  Granny.create(
     description: Faker::GreekPhilosophers.quote,
     user_id: rand(1..10)
   )
-  granny.save!
+end
+
+3.times do
+  Appointment.create(
+    date: Faker::Date.in_date_period,
+    time: "10:30",
+    location: Faker::Address.full_address,
+    user_id: rand(1..10),
+    granny_id: rand(1..5)
+  )
 end
