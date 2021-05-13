@@ -5,6 +5,8 @@ class GranniesController < ApplicationController
   end
 
   def show
+    @granny = Granny.find(params[:id])
+    @appointment = Appointment.new
   end
 
   def new
