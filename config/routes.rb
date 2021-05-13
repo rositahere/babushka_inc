@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :grannies, only: [:index, :show, :new, :create, :update] do
     resources :appointments, only: [:create]
   end
+  resources :appointments, only: [:show]
   resources :users, only: [:show]
-  resources :reviews, only: [:new, :create]
+  resources :reviews, only: [:create]
 end
