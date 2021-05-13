@@ -1,0 +1,19 @@
+<h1>My Appointments</h1>
+
+<ul id="appointments">
+  <% @appointments.each do |appointment| %>
+    <li>
+      <% if appointment.date == date.today %>
+        <i class="fas fa-calendar-exclamation"></i>
+      <% else %>
+        <i class="fas fa-check"></i>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to past_appointments_path do %>
+  <i class=""></i> Past appointments
+<% end %>

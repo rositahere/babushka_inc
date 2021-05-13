@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    Appointment.all
+    @appointments = Appointment.all
   end
 
 end
