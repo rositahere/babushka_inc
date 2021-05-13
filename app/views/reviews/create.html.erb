@@ -4,4 +4,8 @@
   <%= f.submit class:’btn btn-primary’ %>
 <% end %>
 
-<form action=“” method=“post”></form>
+<form action=“/appointment” method=“post”></form>
+
+<%= link_to ‘Edit’, appointments_path(@appointment) %>
+<%= link_to ‘Back’, appointments_path %>
+
