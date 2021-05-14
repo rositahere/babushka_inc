@@ -8,12 +8,16 @@ class GranniesController < ApplicationController
     @granny = Granny.find(params[:id])
     @appointment = Appointment.new
   end
-
-  def new#rosita
+# rosita
+  def new
     @granny = Granny.new
   end
-
-  def create#rosita
+# rosita
+  def create
+    @granny = Granny.new(granny_params)
+    @--.-- = @--
+    @granny.save
+    redirect_to _path(@)
   end
 
   def update
