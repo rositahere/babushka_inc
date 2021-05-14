@@ -20,4 +20,8 @@ class GranniesController < ApplicationController
   def update
   end
 
+  private
+  def new_granny_params
+    params.require(:granny).permit(:description, :photo)
+  end
 end
