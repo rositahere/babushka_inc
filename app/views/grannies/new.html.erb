@@ -1,5 +1,5 @@
 
-<div class="container mt-md-4" align="center"><h2>Congratulations, you are officially a member of Babushka!</h2>
+<div class="container mt-md-4" align="center"><h2>Congratulations, you are officially apart of the granny gang!</h2>
 </div>
 
 <div class="mt-lg-4" align="center">
@@ -10,6 +10,11 @@
   <%= simple_form_for @granny do |f| %>
   <%= f.input :description, placeholder: "What are your hobbies? Tell us what you like to do in your free time.", label: false, input_html: {style: 'height:160px; width: 600px'} %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <div class="container mt-md-3"><%= f.submit 'Complete', class: 'btn btn-dark' %></div>
+  <div class="container mt-md-3">
+    <%= link_to 'Complete', new_user_session_path, :class => 'btn btn-dark' %></div>
   <% end %>
 </div>
+
+
+
+

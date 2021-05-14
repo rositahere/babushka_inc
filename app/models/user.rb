@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_one :granny
   has_many :granny_appointments, through: :granny, source: :appointments
-
+  has_one_attached :photo
 end

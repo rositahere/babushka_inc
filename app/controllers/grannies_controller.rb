@@ -14,13 +14,19 @@ class GranniesController < ApplicationController
   end
 # rosita
   def create
-
+    @granny = Granny.new(new_granny_params)
+    if @granny.save
+      redirect_to granny_path(@granny)
+    else
+      render :new
+    end
   end
 
   def update
   end
 
   private
+
   def new_granny_params
     params.require(:granny).permit(:description, :photo)
   end
