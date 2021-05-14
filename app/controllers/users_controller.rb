@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @appointments = Appointment.all
+    @appointment = Appointment.all
+    @granny = Granny.find(params[:id])
   end
-
 end

@@ -1,13 +1,10 @@
 <h1>My Appointments</h1>
 
-<ul id="appointments">
-  <% @appointments.each do |appointment| %>
-    <li>
-      <% appointment.date %>
-      <% appointment.granny %>
-      <% appointment.status %>
-    </li>
-  <% end %>
-</ul>
-
-<hr>
+  <ul>
+    <% @appointment.each do |a| %>
+      <li>
+        <%= @granny.user.name %>
+        <%= @granny.description %>
+      </li>
+    <% end %>
+  </ul>
