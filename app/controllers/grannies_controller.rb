@@ -14,10 +14,7 @@ class GranniesController < ApplicationController
   end
 # rosita
   def create
-    @granny = Granny.new(granny_params)
-    @--.-- = @--
-    @granny.save
-    redirect_to _path(@)
+
   end
 
   def update
