@@ -31,3 +31,12 @@ end
     granny_id: rand(1..5)
   )
 end
+
+Appointment.create(
+  date: Faker::Date.in_date_period,
+  time: "10:40",
+  location: Faker::Address.full_address,
+  user_id: rand(1..10),
+  granny_id: rand(1..5),
+  status: "complete"
+)

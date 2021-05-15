@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
   resources :appointments, only: [:show]
   resources :users, only: [:show]
-  resources :reviews, only: [:create]
+  resources :reviews, only: [:new,:create]
 end

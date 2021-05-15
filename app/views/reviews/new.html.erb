@@ -1,0 +1,11 @@
+<div class="container mt-md-4" align="center"> <h1> Create a review </h1></div>
+
+<div class="container">
+
+<%= simple_form_for [@review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+</div>
