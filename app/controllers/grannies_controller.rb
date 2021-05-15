@@ -8,11 +8,11 @@ class GranniesController < ApplicationController
     @granny = Granny.find(params[:id])
     @appointment = Appointment.new
   end
-# rosita
+
   def new
     @granny = Granny.new
   end
-# rosita
+
   def create
     @granny = Granny.new(new_granny_params)
     if @granny.save
