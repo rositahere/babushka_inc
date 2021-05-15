@@ -1,9 +1,9 @@
-<h1>My Appointments</h1>
+<h1>Users My Appointments</h1>
 
   <ul>
     <% @appointment.each do |a| %>
       <li>
-        <%= @granny.user.name %>
+        <%= a.granny.user.name %>
         <%= a.date %>
         <%= a.location %>
         <%= a.status %>
