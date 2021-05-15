@@ -6,6 +6,7 @@
 .card h6 {
   text-align: left;
   margin-top: 5px;
+  color: #000;
 }
 
 .card p {
@@ -21,14 +22,18 @@
   text-align: center;
   padding: 20px;
   border: 1px solid rgb(230,230,230);
+  margin-bottom: 30px;
 }
 
 .cards {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
   margin-left: 0.2px;
   margin-right: 0.2px;
+}
+
+.background {
+  background-color: #fff;
 }
 
 
