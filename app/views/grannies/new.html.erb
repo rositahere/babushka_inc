@@ -1,20 +1,17 @@
 
-<div class="container mt-md-4" align="center"><h2>Congratulations, you are officially apart of the granny gang!</h2>
+<div class="container" align="center">
 
+<h2>Congratulations, you are officially apart of the granny gang!</h2>
 
-<div class="mt-lg-4" align="center">
 <h5>We just need some more details to get you started.</h5>
-</div>
 
-<div class="container mt-lg-4" align="center">
   <%= simple_form_for @granny do |f| %>
-  <%= f.input :description, placeholder: "What are your hobbies? Tell us what you like to do in your free time.", label: false, input_html: {style: 'height:160px; width: 600px'} %>
-
-<div align="center">
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-</div>
-
-  <div class="container mt-md-3">
-    <%= link_to 'Complete', new_user_session_path, :class => 'btn btn-dark'%></div>
+    <div class="form-inputs">
+      <%= f.input :description, placeholder: "What are your hobbies? Tell us what you like to do in your free time.", label: false, input_html: {style: 'height:160px; width: 600px'} %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Complete", class:"btn btn-dark btn-lg" %>
+    </div>
   <% end %>
 </div>

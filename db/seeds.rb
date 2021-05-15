@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Appointment.destroy_all
+Granny.destroy_all
+User.destroy_all
+
 10.times do
   User.create(
     name: Faker::FunnyName.two_word_name,

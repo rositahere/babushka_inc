@@ -35,7 +35,7 @@
           <p class="card-text"><%= a.location %></p>
         </div>
         <p class="card-text"><%= a.status %></p>
-        <% if a.status = "complete" %>
+        <% if a.status == "complete" %>
           <%= link_to "Leave a review", new_review_path %>
         <% end %>
       </div>
