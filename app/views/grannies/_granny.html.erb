@@ -1,10 +1,11 @@
 <!-- Granny profile page -->
 
 <!-- form displaying info about granny -->
+<div class = "container">
+
 <h2><%= @granny.user.name %></h2>
+<img src="https://i.imgur.com/OckQ05P.jpg" alt="" width="200px" height="200px">
 <p><%= @granny.description %></p>
-
-
 
    <%= simple_form_for [@granny, @appointment] do |f| %>
       <%= f.input :date, type: "date", html5: true %>
@@ -13,5 +14,6 @@
       <%= f.submit %>
     <% end %>
 
+</div>
 
 <%= link_to "Back to grannies", grannies_path %>
