@@ -1,0 +1,12 @@
+<h1>My Appointments</h1>
+
+  <ul>
+    <% @appointment.each do |a| %>
+      <li>
+        <%= @granny.user.name %>
+        <%= a.date %>
+        <%= a.location %>
+        <%= a.status %>
+      </li>
+    <% end %>
+  </ul>

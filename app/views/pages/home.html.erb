@@ -1,64 +1,84 @@
-<div class = "text-center">
-  <%= image_tag 'https://res.cloudinary.com/diq781xvq/image/upload/v1621063964/movie-bookmark-app/Screenshot_2021-05-15_at_08.32.37_bv4jcw.png', style: 'height:150px;width:auto;' %>
+<div class="background">
+<div class="jumbotron mx-auto">
+<!--   <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4"> -->
+  <h3 align="center">Make a plan with gran.</h3>
+  <p class="lead" align="center">
+      <p align="center"><%= link_to "Sign up", new_user_registration_path, class: "btn btn-dark btn-lg" %>
+  </p>
 </div>
-<div class="container-banner">
-  <h1> Make a plan with gran</h1>
-  <button type="button" class="btn btn-dark">Sign-up</button>
+
+<div class="container">
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://i.imgur.com/lAwLtAg.jpg" alt="">
+        <h6><strong>Alice W., 82</strong></h6>
+        <p>Mum-mum-mum-mah Mum-mum-mum-mah Mum-mum-mum-mah.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/OckQ05P.jpg" alt="">
+        <h6><strong>Josephine D., 79</strong></h6>
+        <p>I wanna hold 'em like they do in Texas, please Fold 'em, let 'em hit me, raise,</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/iRFFkgo.jpg" alt="">
+        <h6><strong>Dominique G., 60</strong></h6>
+        <p>baby, stay with me (I love it) Love game intuition, play the cards with spades</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/zvU9QKw.png" alt="">
+        <h6><strong>Otto A., 83</strong></h6>
+        <p>start. And after he's been hooked, I'll play the one that's on his heart</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://res.cloudinary.com/djiwfu4hh/image/upload/v1621019916/homepage/photo-1447005497901-b3e9ee359928_wgeuph.webp" alt="">
+        <h6><strong>Gertrude S., 85</strong></h6>
+        <p>Mum-mum-mum-mah Mum-mum-mum-mah Mum-mum-mum-mah.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/pbnu086.jpg" alt="">
+        <h6><strong>Akiko K., 71</strong></h6>
+        <p>I wanna hold 'em like they do in Texas, please Fold 'em, let 'em hit me, raise,</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/JqdJlmF.jpg" alt="">
+        <h6><strong>Harold S., 75</strong></h6>
+        <p>baby, stay with me (I love it) Love game intuition, play the cards with spades</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/bUAXzlp.png" alt="">
+        <h6><strong>Silvie P., 68</strong></h6>
+        <p>And after he's been hooked, I'll play the one that's on his heart Oh,</p>
+      </div>
+
+    </div>
+  </div>
 </div>
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://res.cloudinary.com/diq781xvq/image/upload/v1621065220/movie-bookmark-app/Rectangle_3_iqyvgd.png" class="card-img-top" alt="granny-smile">
-        <div class="card-body">
-          <h5 class="card-title">Mai</h5>
-          <p class="card-text">London</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <img src="https://res.cloudinary.com/diq781xvq/image/upload/v1621065220/movie-bookmark-app/Rectangle_3_iqyvgd.png" class="card-img-top" alt="granny-smile">
-      <div class="card-body">
-        <h5 class="card-title">Rosi</h5>
-        <p class="card-text">London</p>
-      </div>
-    </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://res.cloudinary.com/diq781xvq/image/upload/v1621065220/movie-bookmark-app/Rectangle_3_iqyvgd.png" class="card-img-top" alt="granny-smile">
-        <div class="card-body">
-          <h5 class="card-title">Luisa</h5>
-          <p class="card-text">London</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://res.cloudinary.com/diq781xvq/image/upload/v1621065220/movie-bookmark-app/Rectangle_3_iqyvgd.png" class="card-img-top" alt="granny-smile">
-        <div class="card-body">
-          <h5 class="card-title">Emma</h5>
-          <p class="card-text">London</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://res.cloudinary.com/diq781xvq/image/upload/v1621065220/movie-bookmark-app/Rectangle_3_iqyvgd.png" class="card-img-top" alt="granny-smile">
-        <div class="card-body">
-          <h5 class="card-title">Emma</h5>
-          <p class="card-text">London</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://res.cloudinary.com/diq781xvq/image/upload/v1621065220/movie-bookmark-app/Rectangle_3_iqyvgd.png" class="card-img-top" alt="granny-smile">
-        <div class="card-body">
-          <h5 class="card-title">Emma</h5>
-          <p class="card-text">London</p>
-        </div>
-      </div>
-    </div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+     <p>© Flock 2021</p>
+  </div>
 </div>

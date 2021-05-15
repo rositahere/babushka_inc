@@ -1,0 +1,7 @@
+<ul>
+  <% @appointments.each do |appointment| %>
+    <li><%= appointment.date %></li>
+    <li><%= appointment.time %></li>
+    <li><%= appointment.location %></li>
+  <% end %>
+</ul>
