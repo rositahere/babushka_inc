@@ -1,0 +1,30 @@
+<div class="text-center mb-5">
+  <h1>Grans and Pop-pops in your area</h1>
+</div>
+
+<div class="cards_container">
+      <div class="cards">
+        <% @grannies.each do |granny| %>
+          <div class="card">
+            <img src="https://i.imgur.com/OckQ05P.jpg" alt="">
+            <div class = "d-flex  justify-content-between">
+              <h6><strong><%= link_to granny.user.name, granny_path(granny) %></strong></h6>
+              <h6> <%= rand(4..6) %> ⭐️ </h6>
+            </div>
+            <h6><%= granny.description %></h6>
+          </div>
+        <% end %>
+      </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+     <p>© Flock 2021</p>
+  </div>

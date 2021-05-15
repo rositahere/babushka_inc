@@ -15,7 +15,7 @@ require 'faker'
   )
 end
 
-5.times do
+6.times do
   Granny.create(
     description: Faker::GreekPhilosophers.quote,
     user_id: rand(1..10)
