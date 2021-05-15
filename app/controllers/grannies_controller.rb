@@ -2,6 +2,7 @@ class GranniesController < ApplicationController
 
   def index
     @grannies = Granny.all
+    @users = User.all
   end
 
   def show
