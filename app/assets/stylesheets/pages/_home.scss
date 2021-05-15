@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+.container-banner {
+  background-image: url("granny.jpeg");
+  background-size: cover;
+  height: 500px;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+}
+
+body {
+  background-color: white;
+}
