@@ -2,17 +2,18 @@ class GranniesController < ApplicationController
 
   def index
     @grannies = Granny.all
+    @users = User.all
   end
 
   def show
     @granny = Granny.find(params[:id])
     @appointment = Appointment.new
   end
-# rosita
+
   def new
     @granny = Granny.new
   end
-# rosita
+
   def create
     @granny = Granny.new(new_granny_params)
     if @granny.save
