@@ -4,7 +4,9 @@
     <% @appointment.each do |a| %>
       <li>
         <%= @granny.user.name %>
-        <%= @granny.description %>
+        <%= a.date %>
+        <%= a.location %>
+        <%= a.status %>
       </li>
     <% end %>
   </ul>
