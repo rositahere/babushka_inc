@@ -16,6 +16,7 @@ class GranniesController < ApplicationController
 
   def create
     @granny = Granny.new(new_granny_params)
+    @granny.user = current_user
     if @granny.save
       redirect_to granny_path(@granny)
     else

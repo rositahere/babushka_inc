@@ -1,15 +1,15 @@
 
 <div class="container" align="center">
 
-<h2>Congratulations, you are officially apart of the granny gang!</h2><br>
+<h2>Congratulations, you are officially a part of the granny gang!</h2><br>
 
 <h5>We just need some more details to get you started.</h5><br>
 
   <%= simple_form_for @granny do |f| %>
     <div class="form-inputs">
       <%= f.input :description, placeholder: "What are your hobbies? Tell us what you like to do in your free time.", label: false, input_html: {style: 'height:160px; width: 600px'} %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    </div>
+      <div class="row justify-content-center"><%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %></div>
+  </div>
     <div class="form-actions">
       <%= f.button :submit, "Complete", class:"btn btn-dark btn-lg" %>
     </div>
