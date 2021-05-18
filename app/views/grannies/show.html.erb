@@ -1,5 +1,5 @@
-<% if current_user.granny != @granny %>
-    <%= render "granny" %>
-<% elsif current_user.granny.user_id == @granny.id %>
-  <%= render "grannydashboard" %>
+<% if current_user.granny %>
+    <%= render "grannydashboard" %>
+<% else %>
+  <%= render "granny" %>
 <% end %>

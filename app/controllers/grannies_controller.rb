@@ -30,6 +30,6 @@ class GranniesController < ApplicationController
   private
 
   def new_granny_params
-    params.require(:granny).permit(:description, :photo)
+    params.require(:granny).permit(:description, photos:[])
   end
 end
