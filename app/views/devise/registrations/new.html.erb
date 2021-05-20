@@ -22,7 +22,7 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
-          <!-- upload -->
+          <%= f.input :photo, as: :file, label: 'Upload your profile picture' %>
         </div>
 
         <div class="form-actions">
