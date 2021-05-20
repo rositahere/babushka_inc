@@ -9,6 +9,7 @@
       <%= appointment.description %>
       <%= appointment.date %>
       <%= appointment.time %>
+      <%= appointment.location %>
       <%= appointment.user.name %>
 
       <%= link_to 'confirm', appointment_path(appointment, format: 'confirm'), method: 'PATCH' %>
