@@ -2,9 +2,8 @@
 
 <div class="container" style="margin-top: 10px;">
 <h3>Requests</h3>
-    <% @user.photos.each do |p| %>
-    <%= cl_image_tag p.key %>
-    <% end %>
+
+
     <% @granny.appointments.each do |appointment|%>
     <%= appointment.date %>
     <%= appointment.time %>
