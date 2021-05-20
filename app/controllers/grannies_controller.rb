@@ -12,6 +12,10 @@ class GranniesController < ApplicationController
   def show
     @granny = Granny.find_by(id: params[:id])
     @appointment = Appointment.new
+    past_appt = Appointment.find_by(granny_id: params[:id])
+    if past_appt
+      @review = Review.find_by(appointment_id: past_appt.id)
+    end
     @user = User.all
   end
 
