@@ -1,12 +1,17 @@
 class GranniesController < ApplicationController
 
   def index
-    @grannies = Granny.all
-    @users = User.all
+    if current_user.granny.nil?
+      @grannies = Granny.all
+      @users = User.all
+    else
+      redirect_to current_user.granny
+    end
   end
 
   def show
-    @granny = Granny.find(params[:id])
+    @granny = Granny.find_by(id: params[:id])
+    print [@granny]
     @appointment = Appointment.new
   end
 

@@ -3,11 +3,11 @@
 <!-- form displaying info about granny -->
 <div class="container">
 
- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+ <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 30px;">
   <div class="carousel-inner">
     <% @granny.photos.each_with_index do |photo, i| %>
       <div class="carousel-item <%= 'active' if i == 0 %>">
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"d-block w-100" %>
+        <%= cl_image_tag photo.key, height: 400, width: 800, crop: :fill, class:"d-block w-100" %>
       </div>
     <% end %>
   </div>
@@ -32,5 +32,5 @@
     <% end %>
 
 
-<p style="margin-top:20px;"><%= link_to "Back to grannies", grannies_path %><p>
+<p style="margin-top:20px;"><%= link_to "Back", grannies_path %><p>
 </div>
