@@ -16,6 +16,7 @@ class GranniesController < ApplicationController
     if past_appt
       @review = Review.find_by(appointment_id: past_appt.id)
     end
+    @user = User.all
   end
 
   def new
