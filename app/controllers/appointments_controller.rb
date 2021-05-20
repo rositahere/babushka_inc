@@ -19,12 +19,12 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
     @appointment.status = params[:format]
     @appointment.save
-    redirect_to granny_path(current_user), notice: "Status updated to #{@appointment.status}"
+    redirect_to granny_path(@appointment.granny), notice: "Status updated to #{@appointment.status}"
   end
 
   private
 
   def appointment_params
-    params.require(:appointment).permit(:date, :time, :location)
+    params.require(:appointment).permit(:description, :date, :time, :location)
   end
 end

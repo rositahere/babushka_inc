@@ -1,17 +1,19 @@
 <div class="container" style="margin-top: 30px;"><h1>Welcome, <%= current_user.name %></h1></div>
 
 <div class="container" style="margin-top: 10px;">
-<h3>Requests</h3>
-    <% @user.photos.each do |p| %>
-    <%= cl_image_tag p.key %>
-    <% end %>
-    <% @granny.appointments.each do |appointment|%>
-    <%= appointment.date %>
-    <%= appointment.time %>
-    <%= appointment.user.name %>
 
-    <%= link_to 'confirm', appointment_path(appointment, status: 'confirm'), method: 'PATCH' %>
-    <%= link_to 'decline', appointment_path(appointment, status: 'decline'), method: 'PATCH' %>
-    <br />
+  <h3>Requests</h3>
+
+    <% @granny.appointments.each do |appointment|%>
+      <%= cl_image_tag appointment.user.photo.key %>
+      <%= appointment.description %>
+      <%= appointment.date %>
+      <%= appointment.time %>
+      <%= appointment.user.name %>
+
+      <%= link_to 'confirm', appointment_path(appointment, format: 'confirm'), method: 'PATCH' %>
+      <%= link_to 'decline', appointment_path(appointment, format: 'decline'), method: 'PATCH' %>
+      <br />
     <% end %>
+
 </div>

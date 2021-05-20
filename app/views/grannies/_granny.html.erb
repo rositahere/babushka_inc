@@ -31,6 +31,18 @@
       <%= f.submit %>
     <% end %>
 
+<br />
+<% if @review %>
+  <div class="review-card">
+      <h3>Past appointments</h3>
+      <div class="d-flex justify-content-around">
+        <p><%= '⭐️' * @review.rating %></p>
+        <div>
+          <p><%= @review.user.name %></p>
+          <p>"<%= @review.description %>"</p>
+        </div>
+      </div>
+  </div>
+<% end %>
 
-<p style="margin-top:20px;"><%= link_to "Back", grannies_path %><p>
 </div>
