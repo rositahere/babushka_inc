@@ -4,15 +4,17 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    find_appointment
     @review = Review.new(review_params)
-    @review.user = @user
+    @review.user = current_user
+    @review.appointment = @appointment
     @review.save
     redirect_to user_path(current_user)
   end
 
   private
   def find_appointment
-    @review = Review.find(params[:user_id])
+    @appointment = Appointment.find_by(user_id: current_user.id)
   end
 
   def review_params
