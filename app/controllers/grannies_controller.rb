@@ -11,8 +11,8 @@ class GranniesController < ApplicationController
 
   def show
     @granny = Granny.find_by(id: params[:id])
-    print [@granny]
     @appointment = Appointment.new
+    @user = User.all
   end
 
   def new
