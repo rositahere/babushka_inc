@@ -1,8 +1,8 @@
 <!-- Granny profile page -->
 
 <!-- form displaying info about granny -->
-<div class="container">
- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 30px;">
+<div style="margin-left: 100px; margin-right: 100px;">
+ <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 60px; margin-right: 160px; margin-left: 160px;">
   <div class="carousel-inner">
     <% @granny.photos.each_with_index do |photo, i| %>
       <div class="carousel-item <%= 'active' if i == 0 %>">
@@ -20,17 +20,18 @@
   </a>
 </div>
 
-<h2 style="margin-top: 30px;"><%= @granny.user.name %></h2>
-<p style="margin-top: 10px;"><%= @granny.description %></p>
+<h2 style="margin-top: 30px; margin-right: 160px; margin-left: 160px;"><%= @granny.user.name %></h2>
+<p style="margin-top: 10px; margin-right: 160px; margin-left: 160px;"><%= @granny.description %></p>
 
 <hr />
+<div style="margin-left: 400px; margin-right: 400px;">
    <%= simple_form_for [@granny, @appointment] do |f| %>
       <%= f.input :date, type: "date", html5: true %>
       <%= f.input :time %>
       <%= f.input :location %>
       <%= f.submit %>
     <% end %>
-
+</div>
 <br />
 <hr />
 <% if @granny_review %>
