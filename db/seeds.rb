@@ -21,7 +21,7 @@ User.destroy_all
     email: Faker::Internet.email,
     password: "123456"
   )
-  user.photo.attach(io: URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621364553/vl445sszq3ermxdqes8wau9xrqvb.jpg'), filename: 'avatar.png', content_type: 'image/png')
+  user.photo.attach(io: URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621364553/vl445sszq3ermxdqes8wau9xrqvb.jpg'), filename: 'avatar.png', content_type: 'image/jpg')
   user.save!
   if num < 6
     granny = Granny.new(
