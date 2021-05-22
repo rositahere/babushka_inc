@@ -17,11 +17,6 @@
 
 <div class="container" class="tab-content" align="center">
 
-<<<<<<< HEAD
-      <%= link_to 'confirm', appointment_path(appointment, format: 'confirm'), method: 'PATCH' %>
-      <%= link_to 'decline', appointment_path(appointment, format: 'decline'), method: 'PATCH' %>
-
-=======
   <div class="tab-pane fade in show active" id="current">
     <ul>
       <% @granny.appointments.each do |appointment|%>
@@ -38,7 +33,6 @@
       <% else %>
         <p class="card-text"><%= appointment.status %></p>
       <% end %>
->>>>>>> 18742d3db3569764eae702d4732ff04bdea00d1d
       <br />
     <% end %>
 
