@@ -23,6 +23,7 @@
 <h2 style="margin-top: 30px;"><%= @granny.user.name %></h2>
 <p style="margin-top: 10px;"><%= @granny.description %></p>
 
+<hr />
    <%= simple_form_for [@granny, @appointment] do |f| %>
       <%= f.input :date, type: "date", html5: true %>
       <%= f.input :time %>
@@ -31,14 +32,22 @@
     <% end %>
 
 <br />
-<% if @review %>
+<hr />
+<% if @granny_review %>
   <div class="review-card">
-      <h3>Past appointments</h3>
+      <h3>Reviews</h3>
       <div class="d-flex justify-content-around">
+<<<<<<< HEAD
         <p><%= '★' * @review.rating %></p>
         <div>
           <p><%= @review.user.name %></p>
           <p>"<%= @review.description %>"</p>
+=======
+        <p><%= '⭐️' * @granny_review.rating %></p>
+        <div class="flex-grow-1">
+          <p><%= @granny_review.user.name %> said: </p>
+          <p><i>"<%= @granny_review.description %>"</i></p>
+>>>>>>> 5020c3e5112ae530a7e6e856ce752201b87e54ad
         </div>
       </div>
   </div>

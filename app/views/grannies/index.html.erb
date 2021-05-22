@@ -1,14 +1,15 @@
-<div class="container" style="margin-top: 30px;"><h1>Welcome, <%= current_user.name %></h1></div>
+<div class="container" style="margin-top: 30px;"><h2>Welcome, <%= current_user.name %></h2></div>
 <div class="text-center mb-5">
-  <h1><i>Grans and Pop-pops in your area</i></h1>
+  <h1>Grans and Pop-pops in your area</h1>
 </div>
 
 <div class="cards_container">
       <div class="cards">
         <% @grannies.each do |granny| %>
           <div class="card">
-            <img src="https://i.imgur.com/OckQ05P.jpg" alt="">
-            <div class="overlay">Click to find out more! </div>
+            <% if !granny.photos.empty? %>
+              <%= cl_image_tag granny.photos[0].key %>
+            <% end %>
             <div class = "d-flex  justify-content-between">
               <h6><strong><%= link_to granny.user.name, granny_path(granny) %></strong></h6>
               <h6> <%= rand(4..5) %> ★ </h6>
