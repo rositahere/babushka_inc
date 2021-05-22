@@ -2,12 +2,11 @@
 
 <!-- form displaying info about granny -->
 <div class="container">
-
  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 30px;">
   <div class="carousel-inner">
     <% @granny.photos.each_with_index do |photo, i| %>
       <div class="carousel-item <%= 'active' if i == 0 %>">
-        <%= cl_image_tag photo.key, height: 400, width: 800, crop: :fill, class:"d-block w-100" %>
+        <%= cl_image_tag photo.key, height: 600, width: 800, crop: :fill, class:"d-block w-100" %>
       </div>
     <% end %>
   </div>
@@ -36,7 +35,7 @@
   <div class="review-card">
       <h3>Past appointments</h3>
       <div class="d-flex justify-content-around">
-        <p><%= '⭐️' * @review.rating %></p>
+        <p><%= '★' * @review.rating %></p>
         <div>
           <p><%= @review.user.name %></p>
           <p>"<%= @review.description %>"</p>
