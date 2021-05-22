@@ -2,7 +2,7 @@
 
 <div class="container">
 
-<%= simple_form_for [@review] do |f| %>
+<%= simple_form_for [@appointment, @review] do |f| %>
   <%= f.input :rating %>
   <%= f.input :description %>
   <%= f.submit %>
