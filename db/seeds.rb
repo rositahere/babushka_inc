@@ -8,8 +8,8 @@
 require 'faker'
 require "open-uri"
 
-user_photo = URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621364553/vl445sszq3ermxdqes8wau9xrqvb.jpg')
-granny_photo = URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621688821/fxzdkgopvywe4f0coi2qzg4vqqd1.png')
+# user_photo = URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621364553/vl445sszq3ermxdqes8wau9xrqvb.jpg')
+# granny_photo = URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621688821/fxzdkgopvywe4f0coi2qzg4vqqd1.png')
 
 Appointment.destroy_all
 Granny.destroy_all
