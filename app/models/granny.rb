@@ -4,4 +4,5 @@ class Granny < ApplicationRecord
   has_many_attached :photos
 
   validates_presence_of :description
+  validates_presence_of :photos
 end
