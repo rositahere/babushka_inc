@@ -6,41 +6,29 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
+
+user_photo = URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621364553/vl445sszq3ermxdqes8wau9xrqvb.jpg')
+granny_photo = URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621688821/fxzdkgopvywe4f0coi2qzg4vqqd1.png')
 
 Appointment.destroy_all
 Granny.destroy_all
 User.destroy_all
 
-10.times do
-  User.create(
+10.times do | num |
+  user = User.new(
     name: Faker::FunnyName.two_word_name,
     email: Faker::Internet.email,
     password: "123456"
   )
+  user.photo.attach(io: URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621364553/vl445sszq3ermxdqes8wau9xrqvb.jpg'), filename: 'avatar.png', content_type: 'image/png')
+  user.save!
+  if num < 6
+    granny = Granny.new(
+      description: Faker::GreekPhilosophers.quote,
+      user_id: user.id
+    )
+    granny.photos.attach(io: URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621688821/fxzdkgopvywe4f0coi2qzg4vqqd1.png'), filename: 'granny.png', content_type: 'image/png')
+    granny.save!
+  end
 end
-
-6.times do
-  Granny.create(
-    description: Faker::GreekPhilosophers.quote,
-    user_id: rand(1..10)
-  )
-end
-
-3.times do
-  Appointment.create(
-    date: Faker::Date.in_date_period,
-    time: "10:30",
-    location: Faker::Address.full_address,
-    user_id: rand(1..10),
-    granny_id: rand(1..5)
-  )
-end
-
-Appointment.create(
-  date: Faker::Date.in_date_period,
-  time: "10:40",
-  location: Faker::Address.full_address,
-  user_id: rand(1..10),
-  granny_id: rand(1..5),
-  status: "complete"
-)

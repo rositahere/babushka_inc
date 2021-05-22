@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_one :granny
   has_many :granny_appointments, through: :granny, source: :appointments
   has_one_attached :photo
+
+  validates_presence_of :photo
 end
