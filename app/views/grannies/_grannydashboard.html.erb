@@ -1,18 +1,40 @@
-<div class="container" style="margin-top: 30px;"><h1>Welcome, <%= current_user.name %></h1></div>
+<div class="container" style="margin-top: 40px;"><h1>Welcome, <%= current_user.name %></h1></div>
 
 <div class="container" style="margin-top: 10px;">
 
-  <h3>Requests</h3>
 
-    <% @granny.appointments.each do |appointment|%>
-      <%= cl_image_tag appointment.user.photo.key %>
-      <%= appointment.description %>
-      <%= appointment.date %>
-      <%= appointment.time %>
-      <%= appointment.user.name %>
 
-      <%= link_to 'confirm', appointment_path(appointment, format: 'confirm'), method: 'PATCH' %>
-      <%= link_to 'decline', appointment_path(appointment, format: 'decline'), method: 'PATCH' %>
+  <h3 align="center">Requests</h3>
+
+<div>
+  <ul class="nav nav-tabs" style="margin: 30px 150px 30px 150px;">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#current">Current</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#past">Past</a>
+    </li>
+  </ul>
+</div>
+
+<div class="container" class="tab-content" align="center">
+
+  <div class="tab-pane fade in show active" id="current">
+    <ul>
+      <% @granny.appointments.each do |appointment|%>
+    <div class="card mt-4" style="width: 800px;height: 180px">
+          <div class="card-body d-flex justify-content-between align-items-start">
+            <img class="card-img-right" style="width: 100px; height: 100px; margin-left: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.3);">
+              <p class="card-text"><%= appointment.description %></p>
+              <p class="card-text"><%= appointment.date %></p>
+              <p class="card-text"><%= appointment.time %></p>
+              <p class="card-text"><%= appointment.user.name %></p>
+      <% if appointment.status == 'pending' %>
+        <%= link_to 'confirm', appointment_path(appointment, format: 'confirm'), method: 'PATCH' %>
+        <%= link_to 'decline', appointment_path(appointment, format: 'decline'), method: 'PATCH' %>
+      <% else %>
+        <p class="card-text"><%= appointment.status %></p>
+      <% end %>
       <br />
     <% end %>
 
