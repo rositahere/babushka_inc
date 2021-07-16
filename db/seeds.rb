@@ -21,14 +21,14 @@ User.destroy_all
     email: Faker::Internet.email,
     password: "123456"
   )
-  user.photo.attach(io: URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621364553/vl445sszq3ermxdqes8wau9xrqvb.jpg'), filename: 'avatar.png', content_type: 'image/jpg')
+  user.photo.attach(io: URI.open('https://i.imgur.com/HHJynnn.jpg'), filename: 'avatar.png', content_type: 'image/jpg')
   user.save!
   if num < 6
     granny = Granny.new(
       description: Faker::GreekPhilosophers.quote,
       user_id: user.id
     )
-    granny.photos.attach(io: URI.open('https://res.cloudinary.com/djiwfu4hh/image/upload/v1621688821/fxzdkgopvywe4f0coi2qzg4vqqd1.png'), filename: 'granny.png', content_type: 'image/png')
+    granny.photos.attach(io: URI.open('https://i.imgur.com/cDoFFww.png'), filename: 'granny.png', content_type: 'image/png')
     granny.save!
   end
 end
